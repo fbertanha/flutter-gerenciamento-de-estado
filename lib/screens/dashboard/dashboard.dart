@@ -1,5 +1,6 @@
 
-import 'package:bytebank/components/saldo.dart';
+import 'package:bytebank/models/saldo.dart';
+import 'package:bytebank/screens/dashboard/saldo_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class Dashboard extends StatelessWidget {
       ),
       body: Align(
         alignment: Alignment.topCenter,
-          child: Saldo()),
+          child: SaldoCard()),
     );
   }
 }
