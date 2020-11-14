@@ -1,6 +1,7 @@
-import 'package:bytebank/models/saldo.dart';
+import 'package:bytebank/models/transferencias.dart';
 import 'package:bytebank/screens/dashboard/saldo_card.dart';
 import 'package:bytebank/screens/deposito/formulario_deposito.dart';
+import 'package:bytebank/screens/transferencia/formulario.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,16 +20,33 @@ class Dashboard extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: SaldoCard(),
           ),
-          RaisedButton(
-            child: Text('Receber depósito'),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => FormularioDeposito()),
-              );
-            },
-          )
+          ButtonBar(
+            alignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                color: Colors.green,
+                child: Text('Receber depósito'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FormularioDeposito()),
+                  );
+                },
+              ),
+              RaisedButton(
+                color: Colors.green,
+                child: Text('Fazer transferência'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FormularioTransferencia()),
+                  );
+                },
+              )
+            ],
+          ),
         ],
       ),
     );

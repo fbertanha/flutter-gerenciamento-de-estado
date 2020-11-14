@@ -1,4 +1,6 @@
-class Transferencia {
+import 'package:flutter/material.dart';
+
+class Transferencia extends ChangeNotifier {
   final double valor;
   final int numeroConta;
 

@@ -1,14 +1,21 @@
 import 'package:bytebank/screens/dashboard/dashboard.dart';
-import 'package:bytebank/screens/transferencia/lista.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'models/saldo.dart';
+import 'models/transferencias.dart';
 
-void main() => runApp(ChangeNotifierProvider(
-  create: (context) => Saldo(31),
-  child: BytebankApp(),
-));
+void main() => runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => Saldo(31),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Transferencias(),
+        ),
+      ],
+      child: BytebankApp(),
+    ));
 
 class BytebankApp extends StatelessWidget {
   @override
