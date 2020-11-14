@@ -9,6 +9,10 @@ class Transferencia extends ChangeNotifier {
     this.numeroConta,
   );
 
+  String valorFormatado() => 'R\$ $valor';
+
+  String contaFormatada() => 'Conta: $numeroConta';
+
   @override
   String toString() {
     return 'Transferencia{valor: $valor, numeroConta: $numeroConta}';
